@@ -1,13 +1,10 @@
-![Anant Space logo](https://i.postimg.cc/WTPyKmD0/anant-space-logo.png)
-
-# Anant Space
+<img src="https://i.postimg.cc/WTPyKmD0/anant-space-logo.png" alt="Anant Space logo" width="250"/>
 
 > A portfolio, blog, community forum and art website.
 
 ## 📸 Demo
 
-![Text Maze Demo](https://i.postimg.cc/Kjmwxyxp/output.gif)
-### [Visit site. ](https://vmart2025.vercel.app)
+![Anant Space Demo](https://i.postimg.cc/Kjmwxyxp/output.gif)
 
 ## 🚀 Features
 
