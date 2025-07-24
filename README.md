@@ -4,7 +4,7 @@
 
 ## 📸 Demo
 
-![Anant Space Demo](https://i.postimg.cc/Kjmwxyxp/output.gif)
+![Anant Space demo](https://iili.io/Fe8yN0x.gif)
 
 ## 🚀 Features
 
