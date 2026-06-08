@@ -1,0 +1,50 @@
+export const mockBlogs = [
+  {
+    _id: "1",
+    title: "Building Scalable React Applications",
+    author: "Anant",
+    content: { blocks: [{ type: "paragraph", data: { text: "This is a detailed guide on how to architect React apps for scale..." } }] },
+    tags: ["React", "Architecture", "Frontend"],
+    heroPicture: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1000&auto=format&fit=crop",
+    visibleFor: ["all"],
+    meta: { views: 1250, likes: 340, dislikes: 2 },
+    readingTime: 8,
+    status: "published",
+    excerpt: "Learn how to build resilient, scalable and maintainable frontend applications using modern React patterns.",
+    slug: "building-scalable-react-applications",
+    createdAt: "2024-05-12T10:00:00Z",
+    updatedAt: "2024-05-12T10:00:00Z"
+  },
+  {
+    _id: "2",
+    title: "Understanding Node.js Event Loop",
+    author: "Anant",
+    content: { blocks: [{ type: "paragraph", data: { text: "The Node.js event loop is often misunderstood..." } }] },
+    tags: ["Node.js", "Backend", "Performance"],
+    heroPicture: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=1000&auto=format&fit=crop",
+    visibleFor: ["all"],
+    meta: { views: 890, likes: 210, dislikes: 5 },
+    readingTime: 6,
+    status: "published",
+    excerpt: "Demystifying the core engine behind Node.js and how asynchronous operations actually work under the hood.",
+    slug: "understanding-nodejs-event-loop",
+    createdAt: "2024-04-20T14:30:00Z",
+    updatedAt: "2024-04-21T09:15:00Z"
+  },
+  {
+    _id: "3",
+    title: "Designing for Dark Mode: Best Practices",
+    author: "Anant",
+    content: { blocks: [{ type: "paragraph", data: { text: "Dark mode isn't just about inverting colors..." } }] },
+    tags: ["UI/UX", "Design", "CSS"],
+    heroPicture: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop",
+    visibleFor: ["all"],
+    meta: { views: 2100, likes: 520, dislikes: 10 },
+    readingTime: 5,
+    status: "published",
+    excerpt: "Explore the psychological and aesthetic principles of designing beautiful and accessible dark mode interfaces.",
+    slug: "designing-for-dark-mode",
+    createdAt: "2024-03-15T08:45:00Z",
+    updatedAt: "2024-03-15T08:45:00Z"
+  }
+];

@@ -1,6 +1,5 @@
 import Featured from '../components/Featured';
 import ConwaysGame from '../components/ConwaysGame';
-import CGOLMenu from '../components/CGOLMenu';
 
 const GamesPage: React.FC = () => {
   return (
@@ -11,7 +10,6 @@ const GamesPage: React.FC = () => {
         id="subsection-author-info"
         className="bg-[linear-gradient(rgba(26,34,36,0.9),rgba(0,0,0,0.5)),url(deepdarkstarrysky_hd.jpg)] bg-[length:50%]"
       >
-        <CGOLMenu />
         <ConwaysGame />
       </div>
     </article>

@@ -1,8 +1,7 @@
 import { z } from "zod";
 import type { Request, Response, NextFunction } from "express";
-import ApiError from "../../utils/ApiError.js";
-
-const objectIdRegex = /^[a-f\d]{24}$/i;
+import validate from "../../middlewares/validation.middleware.js";
+import { objectIdRegex } from "../../utils/ModuleUtils.js";
 
 const linksSchema = z.object({
     youtube: z.string().url().optional(),
@@ -48,20 +47,6 @@ export const updateProjectSchema = createProjectSchema
 export const projectIdSchema = z.object({
     id: z.string().regex(objectIdRegex, "Invalid project ID"),
 });
-
-function validate(schema: z.ZodTypeAny, source: "body" | "params" | "query" = "body") {
-    return (req: Request, _res: Response, next: NextFunction) => {
-        const result = schema.safeParse(req[source]);
-
-        if (!result.success) {
-            const errors = result.error.issues.map((e: { message: string }) => e.message);
-            return next(new ApiError(400, "Validation failed", errors));
-        }
-
-        req[source] = result.data;
-        next();
-    };
-}
 
 export const ProjectValidator = {
     validateCreate: validate(createProjectSchema, "body"),

@@ -69,7 +69,7 @@ const ProjectBox: React.FC = () => {
                 stiffness: 300,
                 damping: 25,
               }}
-              className="bg-[#1a2224] w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border border-[#facd8a]/30 shadow-2xl relative flex flex-col md:flex-row"
+              className="bg-[#1a2224] w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border border-[#facd8a]/5 shadow-2xl relative flex flex-col md:flex-row"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}

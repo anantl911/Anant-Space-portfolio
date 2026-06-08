@@ -4,6 +4,8 @@ import Footer from '@/components/layout/Footer';
 import HomePage from '@/features/home/pages/HomePage';
 import ArtPage from '@/features/art/pages/ArtPage';
 import GamesPage from '@/features/games/pages/GamesPage';
+import BlogPage from '@/features/blogs/pages/BlogPage';
+import BlogPostPage from '@/features/blogs/pages/BlogPostPage';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +18,8 @@ const App: React.FC = () => {
           <Route path="/Home" element={<HomePage />} />
           <Route path="/Art" element={<ArtPage />} />
           <Route path="/Games" element={<GamesPage />} />
+          <Route path="/Blog" element={<BlogPage />} />
+          <Route path="/Blog/:slug" element={<BlogPostPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
