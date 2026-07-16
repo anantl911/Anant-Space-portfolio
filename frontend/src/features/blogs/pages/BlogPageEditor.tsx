@@ -61,7 +61,7 @@ const BlogEditorPage = () => {
     const isPending = createBlog.isPending || updateBlog.isPending;
 
     return (
-        <div className="min-h-screen bg-neutral-950 text-white px-4 py-8">
+        <div className="min-h-screen bg-[#1a2224] text-white px-4 py-8">
             <div className="max-w-4xl mx-auto space-y-6">
 
                 {/* Page Header */}

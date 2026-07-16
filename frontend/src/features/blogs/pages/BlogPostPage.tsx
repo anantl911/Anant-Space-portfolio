@@ -9,7 +9,7 @@ const BlogPostPage = () => {
    const { data, isLoading } = useBlogDetail(slug || '');
    
    // Fallback to mock data if API is not populated or offline
-   const blog = data?.data || mockBlogs.find(b => b.slug === slug);
+   const blog = data || mockBlogs.find(b => b.slug === slug);
 
    useEffect(() => {
      window.scrollTo(0, 0);

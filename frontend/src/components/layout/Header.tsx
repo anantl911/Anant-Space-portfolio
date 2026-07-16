@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ anantSpaceLogo }) => {
     <header className="sticky top-0">
       <div
         id="container"
-        className=" flex justify-between h-[6vw] bg-center bg-[linear-gradient(rgba(26,34,36,0.8),rgba(26,34,36,0.8)),url(deepdarkstarrysky.jpg)] text-[#facd8a] px-10 bg-[length:60%]"
+        className=" flex justify-between h-[6vw] bg-center bg-[linear-gradient(rgba(26,34,36,0.8),rgba(26,34,36,0.8)),url(/deepdarkstarrysky.jpg)] text-[#facd8a] px-10 bg-[length:60%]"
       >
         <div className="flex justify-center w-full gap-[20vw]">
           <div
@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ anantSpaceLogo }) => {
           >
             <img
               src={anantSpaceLogo}
-              className="bg-center bg-[linear-gradient(rgba(26,34,36,0.8),rgba(26,34,36,0.8)),url(deepdarkstarrysky.jpg)] rounded-full select-none"
+              className="bg-center bg-[linear-gradient(rgba(26,34,36,0.8),rgba(26,34,36,0.8)),url(/deepdarkstarrysky.jpg)] rounded-full select-none"
               alt="Anant's Space Logo"
             />
           </div>

@@ -4,7 +4,7 @@ const Featured: React.FC = () => {
   return (
     <section
       id="featured-games"
-      className="min-h-160 w-full bg-[url(games/background.png)] bg-cover bg-bottom"
+      className="min-h-160 w-full bg-[url(/games/background.png)] bg-cover bg-bottom"
     >
       <div
         id="container"

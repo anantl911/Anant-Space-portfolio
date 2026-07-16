@@ -13,7 +13,7 @@ const AuthorInfo: React.FC = () => {
   return (
     <div
       id="subsection-author-info"
-      className="min-h-170 bg-[linear-gradient(rgba(26,34,36,0.9),rgba(0,0,0,0.5)),url(deepdarkstarrysky_hd.jpg)] bg-[length:50%] relative"
+      className="min-h-170 bg-[linear-gradient(rgba(26,34,36,0.9),rgba(0,0,0,0.5)),url(/deepdarkstarrysky_hd.jpg)] bg-[length:50%] relative"
     >
       <ScrollProgress />
 

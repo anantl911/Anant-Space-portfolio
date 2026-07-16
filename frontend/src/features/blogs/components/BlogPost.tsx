@@ -1,10 +1,106 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-
 interface BlogPostProps {
   blog: any;
 }
+
+const renderTiptapNode = (node: any, index: number | string): React.ReactNode => {
+  if (node.type === 'text') {
+    let content: React.ReactNode = node.text;
+    if (node.marks) {
+      node.marks.forEach((mark: any, mIdx: number) => {
+        const markKey = `mark-${index}-${mIdx}`;
+        switch (mark.type) {
+          case 'bold': content = <strong key={markKey}>{content}</strong>; break;
+          case 'italic': content = <em key={markKey}>{content}</em>; break;
+          case 'underline': content = <u key={markKey}>{content}</u>; break;
+          case 'strike': content = <s key={markKey}>{content}</s>; break;
+          case 'code': content = <code key={markKey} className="bg-neutral-800 px-1 py-0.5 rounded text-[#facd8a]">{content}</code>; break;
+          case 'link': 
+            content = (
+              <a 
+                key={markKey} 
+                href={mark.attrs?.href} 
+                className="text-[#facd8a] hover:underline" 
+                target={mark.attrs?.target || '_blank'}
+                rel="noopener noreferrer"
+              >
+                {content}
+              </a>
+            ); 
+            break;
+        }
+      });
+    }
+    return <React.Fragment key={`text-${index}`}>{content}</React.Fragment>;
+  }
+
+  const renderChildren = () => {
+    return node.content?.map((childNode: any, childIndex: number) => 
+      renderTiptapNode(childNode, `${index}-${childIndex}`)
+    );
+  };
+
+  const textAlignClass = node.attrs?.textAlign && typeof node.attrs.textAlign === 'string'
+    ? `text-${node.attrs.textAlign}` 
+    : '';
+  const blockClass = `${textAlignClass}`.trim();
+
+  switch (node.type) {
+    case 'paragraph':
+      if (!node.content || node.content.length === 0) {
+        return <br key={`br-${index}`} />;
+      }
+      return <p key={`p-${index}`} className={`mb-6 text-lg ${blockClass}`}>{renderChildren()}</p>;
+    
+    case 'heading': {
+      const level = node.attrs?.level || 1;
+      const HeadingTag = `h${level}` as keyof React.JSX.IntrinsicElements;
+      return <HeadingTag key={`h-${index}`} className={`text-white font-bold mt-12 mb-6 ${blockClass}`}>{renderChildren()}</HeadingTag>;
+    }
+    
+    case 'bulletList':
+      return <ul key={`ul-${index}`} className={`list-outside list-disc pl-5 mb-6 text-lg space-y-2 ${blockClass}`}>{renderChildren()}</ul>;
+      
+    case 'orderedList':
+      return <ol key={`ol-${index}`} className={`list-outside list-decimal pl-5 mb-6 text-lg space-y-2 ${blockClass}`}>{renderChildren()}</ol>;
+      
+    case 'listItem':
+      return <li key={`li-${index}`} className={blockClass}>{renderChildren()}</li>;
+      
+    case 'blockquote':
+      return <blockquote key={`bq-${index}`} className={`border-l-4 border-[#facd8a] pl-4 italic my-6 text-neutral-400 ${blockClass}`}>{renderChildren()}</blockquote>;
+      
+    case 'codeBlock':
+      return (
+        <pre key={`pre-${index}`} className={`bg-neutral-900 p-4 rounded-lg overflow-x-auto border border-neutral-800 my-6 ${blockClass}`}>
+          <code className="text-sm font-mono text-neutral-300">{renderChildren()}</code>
+        </pre>
+      );
+      
+    case 'image':
+      return (
+        <figure key={`img-${index}`} className={`my-8 ${blockClass}`}>
+          <img 
+            src={node.attrs?.src} 
+            alt={node.attrs?.alt || 'Blog image'} 
+            title={node.attrs?.title}
+            className="rounded-xl w-full h-auto object-cover max-h-[600px]"
+          />
+          {node.attrs?.title && (
+             <figcaption className="text-center text-sm text-neutral-500 mt-2">{node.attrs.title}</figcaption>
+          )}
+        </figure>
+      );
+      
+    case 'horizontalRule':
+      return <hr key={`hr-${index}`} className="border-neutral-800 my-10 border-t-2" />;
+
+    default:
+      return <React.Fragment key={`unknown-${index}`}>{renderChildren()}</React.Fragment>;
+  }
+};
 
 const BlogPost: React.FC<BlogPostProps> = ({ blog }) => {
   return (
@@ -40,7 +136,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ blog }) => {
             <span className="text-neutral-300">{blog.author}</span>
           </div>
           <span>•</span>
-          <span>{blog.readingTime} min read</span>
+          <span>{blog.readingTime || 1} min read</span>
           <span>•</span>
           <span>{new Date(blog.createdAt || Date.now()).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
         </div>
@@ -57,28 +153,9 @@ const BlogPost: React.FC<BlogPostProps> = ({ blog }) => {
       )}
 
       <div className="prose prose-lg prose-invert max-w-none text-neutral-300 leading-relaxed space-y-6">
-        {/* Basic rendering for simple block text */}
-        {blog.content?.blocks?.map((block: any, idx: number) => {
-          if (block.type === 'paragraph') {
-            return <p key={idx} className="mb-6 text-lg" dangerouslySetInnerHTML={{ __html: block.data.text }}></p>;
-          }
-          if (block.type === 'header') {
-            const Tag = `h${block.data.level}` as keyof React.JSX.IntrinsicElements;
-            return <Tag key={idx} className="text-white font-bold mt-12 mb-6" dangerouslySetInnerHTML={{ __html: block.data.text }}></Tag>;
-          }
-          if (block.type === 'list') {
-            const ListTag = block.data.style === 'ordered' ? 'ol' : 'ul';
-            return (
-              <ListTag key={idx} className="list-outside list-disc pl-5 mb-6 text-lg space-y-2">
-                {block.data.items.map((item: string, i: number) => (
-                  <li key={i} dangerouslySetInnerHTML={{ __html: item }}></li>
-                ))}
-              </ListTag>
-            );
-          }
-          return null;
-        })}
-        {(!blog.content?.blocks || blog.content.blocks.length === 0) && (
+        {blog.content?.type === 'doc' && blog.content?.content?.length > 0 ? (
+          blog.content.content.map((node: any, idx: number) => renderTiptapNode(node, `root-${idx}`))
+        ) : (
           <p>No content available for this post.</p>
         )}
       </div>

@@ -251,7 +251,7 @@ const JumpingHopper: React.FC<JumpingHopperProps> = ({ setScrollToUnderwater }) 
       return (
         <div
           style={{
-            backgroundImage: `url(${backgroundName})`,
+            backgroundImage: `url(/${backgroundName})`,
             display: renderAnimation ? 'none' : 'block',
             backgroundSize: 'cover',
             backgroundPosition: 'center',

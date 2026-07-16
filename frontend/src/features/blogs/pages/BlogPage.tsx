@@ -2,10 +2,12 @@ import BlogHero from "../components/BlogHero";
 import BlogGrid from "../components/BlogGrid";
 import { useBlogs } from "@/hooks/queries/useBlogs";
 import { mockBlogs } from "@/data/blogs";
+import { NewBlog } from "../components/NewBlog";
+
 
 const BlogPage = () => {
     const { data, isLoading } = useBlogs();
-    console.log(data?.blogs.length)
+
     // Use data from API if it exists and has items, otherwise use mockBlogs
     const { blogs } = (data && data.blogs.length > 0) ? data : { blogs: mockBlogs } ;
 
@@ -13,7 +15,7 @@ const BlogPage = () => {
         <div className="bg-neutral-950">
             <BlogHero />
             <div className="py-6">
-                <div className="max-w-7xl mx-auto px-4 py-20">
+                <div className="max-w-7xl mx-auto px-4 pt-20 pb-10">
                     <div className="text-center mb-16 fade-in">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#facd8a] text-bold mb-4">Latest Articles</h2>
                         <p className="text-[#facd8a]/60 max-w-2xl mx-auto text-dm">
@@ -28,6 +30,10 @@ const BlogPage = () => {
                     ) : (
                         <BlogGrid blogs={blogs} />
                     )}
+                </div>
+
+                <div id="new-blogs">
+                    <NewBlog />
                 </div>
             </div>
         </div>
