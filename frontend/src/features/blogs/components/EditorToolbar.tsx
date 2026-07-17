@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import FileApi from '@/api/file.api';
 import type { Editor } from '@tiptap/react';
 
@@ -6,14 +7,33 @@ type ToolbarProps = {
 };
 
 const EditorToolbar = ({ editor }: ToolbarProps) => {
+    // Force re-render when editor state (selection/formatting) changes
+    const [, forceUpdate] = useState({});
+
+    useEffect(() => {
+        if (!editor) return;
+
+        const handleUpdate = () => forceUpdate({});
+        
+        editor.on('transaction', handleUpdate);
+        editor.on('selectionUpdate', handleUpdate);
+
+        return () => {
+            editor.off('transaction', handleUpdate);
+            editor.off('selectionUpdate', handleUpdate);
+        };
+    }, [editor]);
+
     if (!editor) return null;
+
     // Helper to build button className based on active state
     const btnClass = (isActive: boolean) =>
-        `px-2 py-1 rounded text-sm font-medium transition-colors ${
+        `px-2 py-1 rounded text-sm font-medium transition-all ${
             isActive
-                ? 'bg-white/20 text-white'         // Active state
-                : 'text-white/60 hover:text-white'  // Inactive state
+                ? 'bg-[rgb(250,205,138)] text-black shadow-sm'         // Active state
+                : 'text-white/60 hover:text-white hover:bg-white/10'  // Inactive state
         }`;
+
     return (
         <div className="flex flex-wrap items-center gap-1 p-2 border-b border-white/10 bg-white/5">
             {/* ── Text Style Group ── */}
@@ -45,6 +65,16 @@ const EditorToolbar = ({ editor }: ToolbarProps) => {
             >
                 <s>S</s>
             </button>
+            {/* ── Color Picker ── */}
+            <div className="flex items-center mx-1">
+                <input
+                    type="color"
+                    onInput={(e) => editor.chain().focus().setColor((e.target as HTMLInputElement).value).run()}
+                    value={editor.getAttributes('textStyle').color || '#ffffff'}
+                    className="w-6 h-6 p-0 border-0 rounded cursor-pointer bg-transparent outline-none"
+                    title="Text Color"
+                />
+            </div>
             {/* ── Divider ── */}
             <div className="w-px h-5 bg-white/20 mx-1" />
             {/* ── Heading Group ── */}
@@ -59,7 +89,7 @@ const EditorToolbar = ({ editor }: ToolbarProps) => {
                 </button>
             ))}
             <div className="w-px h-5 bg-white/20 mx-1" />
-            <label className="px-2 py-1 rounded text-sm text-white/60 hover:text-white cursor-pointer transition-colors">
+            <label className="px-2 py-1 rounded text-sm text-white/60 hover:text-white hover:bg-white/10 cursor-pointer transition-all">
                 🖼 Image
                 <input
                     type="file"
@@ -68,9 +98,15 @@ const EditorToolbar = ({ editor }: ToolbarProps) => {
                     onChange={async (e) => {
                         const file = e.target.files?.[0];
                         if (file) {
-                            // TODO: Look into this further !IMPORTANT
-                            FileApi.upload(file);
-                            // // editor.chain().focus().setImage({ src: result.data.url }).run();
+                            try {
+                                const result: any = await FileApi.upload(file);
+                                if (result?.url || result?.fileUrl) {
+                                    const url = result.url || result.fileUrl;
+                                    editor.chain().focus().setImage({ src: url }).run();
+                                }
+                            } catch (err) {
+                                console.error('Image upload failed:', err);
+                            }
                         }
                         e.target.value = '';  // Reset so same file can be re-uploaded
                     }}

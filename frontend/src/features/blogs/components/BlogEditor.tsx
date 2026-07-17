@@ -18,8 +18,8 @@ const BlogEditor = ({ editor }: BlogEditorProps) => {
             <EditorToolbar editor={editor} />
 
             {/* Editor Content Area */}
-            <div className="p-4 min-h-[400px] prose prose-invert max-w-none">
-                <EditorContent editor={editor} />
+            <div className="p-4 min-h-[400px] tiptap-editor h-full flex-grow text-white">
+                <EditorContent editor={editor} className="min-h-[400px] outline-none" />
             </div>
 
             {/* Footer — Word/Character count */}

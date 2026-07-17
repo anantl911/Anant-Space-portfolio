@@ -56,17 +56,15 @@ const Intro: React.FC = () => {
           look forward to interesting projects.{' '}
         </p>
         <p>
-          This place serves partly as a personal space and a portfolio site.
-          Aside from coding, I like paintings, poetry, video games and reading.
-          I&apos;d like to dedicate forthcoming years in development of my
-          thoughts and worldview to social welfare and societal problems. My
-          views relating to which I&apos;ll always outline in this blog.
+          This is my personal space and a portfolio site.
+          Aside from coding, I like to play video games and I read, I make white board sketches.
+          I&apos; plan to use this site to share my experience regarding life, my journey as a SE and some creative works, which I'll outline in future.
         </p>
-        <p>
+        {/* <p>
           If you&apos;d like to contribute creative works and/or your thoughts
           feel free to share them. You will be credited. I&apos;d be glad to
-          feature your works here.{' '}
-        </p>
+          feature your works here, as progress is made on Anant Space{' '}
+        </p> */}
 
         {/* Socials */}
         <div className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start">

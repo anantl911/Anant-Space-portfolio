@@ -1,120 +1,170 @@
-import type { Project } from '@/types/projects';
+import type { Project } from '@/types/models/project';
 
 const projects: Project[] = [
   {
-    id: 'cautomaton',
-    title: 'Cellular Automaton',
+    _id: "6a1f22e63f3da4346a868606",
+    title: "HADES - FAS",
     description: [
-      'Implemented Conway\'s Game of Life, Langton Ant and Predator vs Prey--popular models in CA as part of Project Based Learning (PBL)',
-      'Introduced Perlin\'s Noise and image input by using OpenCV in C++',
-      'Introduced vertex mode, generation count and graph to visualize cell population growth',
+      "HADES is a plug and play Face Authentication Solution, a SaaS made available on a token access basis for active liveness and Virtual Camera attack detection powered by MobileNet V3 and XCeptionNet CNN.",
+      "My role required me to build an end to end SaaS platform from Frontend to Backend, including a plug & play NPM module development as part of our SaaS, with RazorPay integration, and model integration.",
+      "Collaborated in a team four to build a dataset of 2500 images, involving 25 subjects and helped train MobileNet V3 Neural Network model, achieving an accuracy of 97.5%"
     ],
-    image: [
-      'projects/CGOL/cgol.jpg',
-      'projects/CGOL/langAnt.jpg',
-      'projects/CGOL/main-menu.jpg',
-      'projects/CGOL/pvp.jpg',
+    techTags: {
+      general: [],
+      frontend: ["reactjs", "tailwindcss", "shadcn", "javascript"],
+      backend: ["expressjs", "nodejs"],
+      database: ["posgressql", "prismaorm"],
+      desktop: [],
+      others: []
+    },
+    designatedTag: {
+      tag: "FY_PROJECT",
+      detail: null
+    },
+    visibleFor: ["everyone"],
+    screenshots: [
+      "https://res.cloudinary.com/diddxcfh1/image/upload/v1780755795/hades1_ekx74x.avif",
+      "https://res.cloudinary.com/diddxcfh1/image/upload/v1780755795/hades3_ab7blf.avif",
+      "https://res.cloudinary.com/diddxcfh1/image/upload/v1780755794/hades2_ugdjsx.avif"
     ],
-    techInvolved: {
-      'C++': 'tech-stack-icons/cpp.svg',
-      OpenCV: 'tech-stack-icons/opencv.svg',
-      SFML: 'tech-stack-icons/sfml.svg',
-    },
-    date: '01/04/23-01/05/23',
-    links: {
-      github: 'https://github.com/anantl911',
-      demo: '#',
-    },
+    startedAt: "2024-01-07T18:30:00.000Z",
+    finishedAt: "2025-01-05T18:30:00.000Z",
+    priority: 1,
+    createdAt: "2026-06-02T18:37:26.676Z",
+    updatedAt: "2026-06-02T18:37:26.676Z",
+    __v: 0
   },
   {
-    id: 'iportal',
-    title: 'Interns Portal',
+    _id: "6a1fe8aad74324e19a4cb755",
+    title: "AI Interview Platform",
     description: [
-      'Developed full fledged website and interns portal by utilizing ASP.NET for backend and .NET framework for desktop portal',
-      'Refactord existing project into ReactJS and Node based backend with introduced course sales and interns performance analytics',
-      'Refactored plain css to TailwindCSS with resposive design.',
+      "AI Interview is a platform for Q&A based interview preparation. Users generate interview questions of topic of their choice, powered by MERN stack and Google Gemini Flash model."
     ],
-    image: [
-      'projects/ET_PORTAL/desktop_dashboard.png',
-      'projects/ET_PORTAL/website.png',
-      'projects/ET_PORTAL/services.png',
-      'projects/ET_PORTAL/services.png',
+    techTags: {
+      general: [],
+      frontend: ["reactjs", "tailwindcss", "shadcn", "javascript"],
+      backend: ["expressjs", "nodejs"],
+      database: ["mongodb"],
+      desktop: [],
+      others: ["google/genai"]
+    },
+    designatedTag: {
+      tag: "",
+      detail: null
+    },
+    visibleFor: ["everyone"],
+    screenshots: [
+      "https://res.cloudinary.com/diddxcfh1/image/upload/v1780756164/aiplat1_kyve32.avif",
+      "https://res.cloudinary.com/diddxcfh1/image/upload/v1780756167/aiplat2_imwykf.avif"
     ],
-    techInvolved: {
-      '.NET': 'tech-stack-icons/dotnetframework.jpg',
-      ASPNET: 'tech-stack-icons/aspnet.svg',
-    },
-    date: '01/12/23-15/01/24',
-    links: {
-      github: 'https://github.com/anantl911',
-      demo: '#',
-    },
+    startedAt: "2025-04-02T18:30:00.000Z",
+    finishedAt: "2025-04-03T18:30:00.000Z",
+    priority: 2,
+    createdAt: "2026-06-03T08:41:14.156Z",
+    updatedAt: "2026-06-03T08:41:14.156Z",
+    __v: 0
   },
   {
-    id: 'pookienews',
-    title: 'PeekyNews 1.0',
+    _id: "6a2005669c35da88327c3ac3",
+    title: "StoreIt - Storage Solution",
     description: [
-      'PeekyNews is an AI based news site developed for enhanced journalism integrity where users can smartly consume news content.',
-      'Developed an AI agent that summarizes news, verifies facts and can be queried for news powered by llama 2.5 and QuenZ vector database',
-      'Utilized Redis for inmemory data caching to reduce API calls and improved response time.',
+      "With features like virus scanning, RAG based file search and LLM integration. StoreIt is a secure cloud file storage system made using React, NextJs and TailwindCSS"
     ],
-    image: ['projects/PEEKYNEWS/pnews_home.jpg'],
-    techInvolved: {
-      '.NET': 'tech-stack-icons/dotnetframework.jpg',
-      ASPNET: 'tech-stack-icons/aspnet.svg',
+    techTags: {
+      general: ["nextjs"],
+      frontend: ["reactjs", "tailwindcss", "shadcn", "javascript"],
+      backend: [],
+      database: ["appwrite/tabledb"],
+      desktop: [],
+      others: ["appwrite/storagebucket"]
     },
-    date: '01/02/25-01/03/25',
-    links: {
-      github: 'https://github.com/anantl911',
-      demo: '#',
+    designatedTag: {
+      tag: "",
+      detail: null
     },
+    visibleFor: ["everyone"],
+    screenshots: [
+      "https://res.cloudinary.com/diddxcfh1/image/upload/v1780756281/sit1_n0fgxr.avif",
+      "https://res.cloudinary.com/diddxcfh1/image/upload/v1780756288/sit2_ctdaoz.avif",
+      "https://res.cloudinary.com/diddxcfh1/image/upload/v1780756440/sit3_hbkjja.avif",
+      "https://res.cloudinary.com/diddxcfh1/image/upload/v1780756562/sit4_vfb68y.avif"
+    ],
+    startedAt: "2025-01-05T18:30:00.000Z",
+    finishedAt: "2025-02-07T18:30:00.000Z",
+    priority: 3,
+    createdAt: "2026-06-03T10:43:50.276Z",
+    updatedAt: "2026-06-03T10:43:50.276Z",
+    __v: 0
   },
   {
-    id: 'antispoof',
-    title: 'Hybrid Anti Spoofing',
+    _id: "6a2020a355801d75a7cafbdb",
+    title: "SussyGeek",
     description: [
-      'Developed an integrated anti spoofing framework to prevent FAS spoofing as a part of Final Year project',
-      'Detects 2D Spoof attacks, DeepFake attacks and Video injection/Virtual Camera',
-      'Powered by CNN models namely MobileNet V3 and XCeptionNet',
+      "Made for GeeksForGeeks, an extension and a ranking platform, SussyGeeks allows institution wide student searching, ranking and QOL  fixes to GFG.",
+      "Powered by Distributed Scrapping engine to reduce scrapping time linearly without reverse proxies. Multiple people can scrape institute data hassle free.",
+      "Quality of life features like bookmarking problems, note-making and custom celebration window, as well full-name based searching."
     ],
-    image: [
-      'projects/ET_PORTAL/desktop_dashboard.png',
-      'projects/SPOOF/architecture.png',
+    techTags: {
+      general: ["typescript"],
+      frontend: ["reactjs", "tailwindcss", "shadcn"],
+      backend: ["nodejs", "expressjs"],
+      database: ["appwrite/tabledb", "redis"],
+      desktop: [],
+      others: []
+    },
+    designatedTag: {
+      tag: "",
+      detail: null
+    },
+    visibleFor: ["everyone"],
+    screenshots: [
+      "https://res.cloudinary.com/diddxcfh1/image/upload/v1780756752/sg1_d65sa4.avif",
+      "https://res.cloudinary.com/diddxcfh1/image/upload/v1780756752/sg2_imiznk.avif"
     ],
-    techInvolved: {
-      '.NET': 'tech-stack-icons/dotnetframework.jpg',
-      ASPNET: 'tech-stack-icons/aspnet.svg',
-    },
-    date: '01/01/25-01/02/25',
-    links: {
-      github: 'https://github.com/anantl911',
-      demo: '#',
-    },
+    startedAt: "2025-01-07T18:30:00.000Z",
+    finishedAt: "2025-01-09T18:30:00.000Z",
+    priority: 4,
+    createdAt: "2026-06-03T12:40:03.127Z",
+    updatedAt: "2026-06-03T12:40:03.127Z",
+    __v: 0
   },
   {
-    id: 'issstorwage',
-    title: 'ISS Stowage System',
+    _id: "6a2039e8b82364a6b12876c2",
+    title: "Cellular Automaton",
     description: [
-      "Developed a stowage system and mission simulation for the ISS as a solo participant. A solution for National Space Hackathon 25' organized by IIT Delhi",
-      'Managed data interactions between frontend and backend by utilizing Postman for API testing',
-      'Implemented frontend powered by ReactJS and tailwindCSS with Node based backend powered by pgSQL as database.',
-      'Introduced visualizations for stowage operations along with simulation by using d3.js',
-      'Developed priority sorting based 3D Bin Packing solution for efficient storage operations.',
+      "Implementation of Conway's Game of Life, Langton Ant and Predator vs Prey, popular CA models as part of Project Based Learning (PBL).",
+      "Introduced Perlin's Noise for natural terrain generation and image input in C++ using OpenCV.",
+      "Introduced vertex mode, generation count and graph to visualize cell population growth. All implemented using C++ and SFML."
     ],
-    image: [
-      'projects/ET_PORTAL/desktop_dashboard.png',
-      'projects/SPOOF/architecture.png',
-    ],
-    techInvolved: {
-      '.NET': 'tech-stack-icons/dotnetframework.jpg',
-      ASPNET: 'tech-stack-icons/aspnet.svg',
+    techTags: {
+      general: ["c++", "sfml", "opencv"],
+      frontend: [],
+      backend: [],
+      database: [],
+      desktop: [],
+      others: []
     },
-    date: '20/03/25-16/04/25',
+    designatedTag: {
+      tag: "",
+      detail: null
+    },
+    visibleFor: ["everyone"],
+    screenshots: [
+      "https://res.cloudinary.com/diddxcfh1/image/upload/v1780759600/00SCI-CONWAY-zucconi-image-jumbo_ivlkzl.jpg"
+    ],
+    startedAt: "2025-01-05T18:30:00.000Z",
+    finishedAt: "2025-01-09T18:30:00.000Z",
+    priority: 6,
+    createdAt: "2026-06-03T14:27:52.598Z",
+    updatedAt: "2026-06-03T14:27:52.598Z",
+    __v: 0,
     links: {
-      github: 'https://github.com/anantl911',
-      demo: '#',
-    },
-  },
+      youtube: "youtube.com",
+      as_blog: "test",
+      deployment: "fasfasf",
+      github: "sdadas"
+    }
+  }
 ];
 
 export default projects;

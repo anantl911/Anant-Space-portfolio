@@ -4,6 +4,8 @@ import TextAlign from '@tiptap/extension-text-align';
 import Image from '@tiptap/extension-image';
 import Placeholder from '@tiptap/extension-placeholder';
 import CharacterCount from '@tiptap/extension-character-count';
+import { Color } from '@tiptap/extension-color';
+import { TextStyle } from '@tiptap/extension-text-style';
 
 // The content type that Tiptap produces / consumes
 export type TiptapDocument = Record<string, unknown>;
@@ -18,6 +20,8 @@ export const useBlogEditor = (options: UseBlogEditorOptions = {}) => {
 
     const editor = useEditor({
         extensions: [
+            TextStyle,
+            Color,
             // StarterKit v3 bundles: Bold, Italic, Strike, Underline, Code,
             // Heading, Paragraph, BulletList, OrderedList, Blockquote,
             // CodeBlock, HorizontalRule, History, Link, and more.

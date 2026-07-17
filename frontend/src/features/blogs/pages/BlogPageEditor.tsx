@@ -144,8 +144,8 @@ const BlogEditorPage = () => {
                     <button
                         onClick={handlePublish}
                         disabled={isPending || !title.trim()}
-                        className="px-8 py-3 bg-blue-600 hover:bg-blue-500 disabled:opacity-50
-                                   rounded-lg font-medium transition-colors"
+                        className="px-8 py-3 bg-[rgb(250,205,138)] text-black hover:bg-white disabled:opacity-50
+                                font-semibold hover:cursor-pointer transition-colors duration-1000"
                     >
                         {isPending ? 'Publishing...' : isEditing ? 'Update' : 'Publish'}
                     </button>

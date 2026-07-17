@@ -7,10 +7,10 @@ const FileApi = {
         const formData = new FormData();
         formData.append('image', file);
 
-        const res = await backendApi.post(filePaths.upload, { body: formData });
+        const res = await backendApi.post(filePaths.upload, formData, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+        });
 
-        // TODO: LOOK into this later.
-        // editor.chain().focus().setImage({ src: result.data.url }).run();
         return res;
     }
 }
