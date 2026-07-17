@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 AnantSpacerelated
+.vercel
+.env*
