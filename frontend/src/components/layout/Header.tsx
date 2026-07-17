@@ -47,14 +47,14 @@ const Header: React.FC<HeaderProps> = ({ anantSpaceLogo }) => {
     <header className="sticky top-0 z-50">
       <div
         id="container"
-        className="relative z-20 flex justify-between h-16 md:h-[6vw] bg-center bg-[linear-gradient(rgba(26,34,36,0.8),rgba(26,34,36,0.8)),url(/deepdarkstarrysky.jpg)] text-[#facd8a] px-4 md:px-10 bg-[length:100%] md:bg-[length:60%]"
+        className="relative z-20 flex justify-between h-16 md:h-[6vw] bg-center bg-[linear-gradient(rgba(26,34,36,0.8),rgba(26,34,36,0.8)),url(/deepdarkstarrysky.webp)] text-[#facd8a] px-4 md:px-10 bg-[length:100%] md:bg-[length:60%]"
       >
         {/* Mobile View */}
         <div className="md:hidden flex justify-between items-center w-full">
           <div className="w-24 h-24 relative top-5 right-6">
             <img
               src={anantSpaceLogo}
-              className="bg-center bg-[linear-gradient(rgba(26,34,36,0.8),rgba(26,34,36,0.8)),url(/deepdarkstarrysky.jpg)] rounded-full select-none w-full h-full object-cover relative"
+              className="bg-center bg-[linear-gradient(rgba(26,34,36,0.8),rgba(26,34,36,0.8)),url(/deepdarkstarrysky.webp)] rounded-full select-none w-full h-full object-cover relative"
               alt="Anant's Space Logo"
             />
           </div>
@@ -75,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({ anantSpaceLogo }) => {
           >
             <img
               src={anantSpaceLogo}
-              className="bg-center bg-[linear-gradient(rgba(26,34,36,0.8),rgba(26,34,36,0.8)),url(/deepdarkstarrysky.jpg)] rounded-full select-none"
+              className="bg-center bg-[linear-gradient(rgba(26,34,36,0.8),rgba(26,34,36,0.8)),url(/deepdarkstarrysky.webp)] rounded-full select-none"
               alt="Anant's Space Logo"
             />
           </div>
@@ -105,7 +105,7 @@ const Header: React.FC<HeaderProps> = ({ anantSpaceLogo }) => {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-full left-0 w-full bg-center bg-[linear-gradient(rgba(26,34,36,0.8),rgba(26,34,36,0.8)),url(/deepdarkstarrysky.jpg)] overflow-hidden z-10"
+            className="md:hidden absolute top-full left-0 w-full bg-center bg-[linear-gradient(rgba(26,34,36,0.8),rgba(26,34,36,0.8)),url(/deepdarkstarrysky.webp)] overflow-hidden z-10"
           >
             <ul className="flex flex-col items-center py-2 text-[#facd8a] text-lg font-medium tracking-widest">
               {populateList(0, true)}

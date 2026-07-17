@@ -13,7 +13,7 @@ const App: React.FC = () => {
     <article>
       <BrowserRouter>
         <div className="sticky top-0 z-50">
-          <Header anantSpaceLogo="/anant_space_logo2.png" />
+          <Header anantSpaceLogo="/anant_space_logo2.webp" />
         </div>
         <Routes>
           <Route path="/Home" element={<HomePage />} />

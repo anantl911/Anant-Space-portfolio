@@ -245,7 +245,7 @@ const JumpingHopper: React.FC<JumpingHopperProps> = ({ setScrollToUnderwater }) 
   );
 
   const getNonAnimationElement = useCallback(
-    (backgroundName: string = 'wheedit-empty.jpg') => {
+    (backgroundName: string = 'wheedit-empty.webp') => {
       const isEmptyBackground = backgroundName.includes('empty');
 
       return (
@@ -316,7 +316,7 @@ const JumpingHopper: React.FC<JumpingHopperProps> = ({ setScrollToUnderwater }) 
         </div>
       )}
 
-      {!renderAnimation && getNonAnimationElement('wheedit-empty.jpg')}
+      {!renderAnimation && getNonAnimationElement('wheedit-empty.webp')}
     </>
   );
 };

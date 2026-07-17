@@ -23,10 +23,10 @@ const ArtPage: React.FC = () => {
 
       <div
         ref={underwaterDiv}
-        className="z-10 min-h-160 w-full bg-cover bg-no-repeat bg-center bg-[url(/wheedit-empty2.jpg)]"
+        className="z-10 min-h-160 w-full bg-cover bg-no-repeat bg-center bg-[url(/wheedit-empty2.webp)]"
       />
 
-      <div className="min-h-200 min-w-full bg-[linear-gradient(rgba(0,18,26,0.9),rgba(0,0,0,1)),url(/wheedit-empty2.jpg)]" />
+      <div className="min-h-200 min-w-full bg-[linear-gradient(rgba(0,18,26,0.9),rgba(0,0,0,1)),url(/wheedit-empty2.webp)]" />
     </article>
   );
 };

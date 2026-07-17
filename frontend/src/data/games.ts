@@ -5,7 +5,7 @@ const featuredGames: FeaturedGame[] = [
     title: "Conway's Game of Life",
     description:
       "A zero-player game that J.H Conway came up with. Try it out and see if you can make a turing machine, or maybe you're just curious?",
-    pictures: ['games/featured_images/cgol/tmachine.jpg'],
+    pictures: ['games/featured_images/cgol/tmachine.webp'],
   },
   {
     title: "Langton's Ant",
@@ -17,7 +17,7 @@ const featuredGames: FeaturedGame[] = [
     title: 'Predator vs Prey',
     description:
       "See who wins in the race of life, or you're here to create a new life?",
-    pictures: ['games/featured_images/pvp/pvp.png'],
+    pictures: ['games/featured_images/pvp/pvp.webp'],
   },
 ];
 

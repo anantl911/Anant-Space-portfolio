@@ -70,8 +70,8 @@ const MiscInfo: React.FC = () => {
 
   const renderFigures = () => (
     <div id="transparent-figures" className="hidden sm:flex">
-      <div className="min-h-[630px] w-full bg-cover absolute z-10 bg-[url(/home/hills.png)]" />
-      <div className="min-h-[620px] w-full bg-cover absolute z-20 top-[10px] bg-[url(/home/figures.png)]" />
+      <div className="min-h-[630px] w-full bg-cover absolute z-10 bg-[url(/home/hills.webp)]" />
+      <div className="min-h-[620px] w-full bg-cover absolute z-20 top-[10px] bg-[url(/home/figures.webp)]" />
     </div>
   );
 
@@ -79,7 +79,7 @@ const MiscInfo: React.FC = () => {
     <div
       ref={sectionRef}
       id="wow"
-      className="min-h-[630px] bg-[url(/home/anant_space_bg.png)] bg-cover relative w-full overflow-hidden"
+      className="min-h-[630px] bg-[url(/home/anant_space_bg.webp)] bg-cover relative w-full overflow-hidden"
     >
       {renderStars()}
       {renderFigures()}

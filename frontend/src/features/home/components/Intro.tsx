@@ -116,7 +116,7 @@ const Intro: React.FC = () => {
 
         <div className="w-full h-full rounded-[2rem] overflow-hidden border-4 border-[#facd8a] shadow-[0_0_30px_rgba(250,205,138,0.2)] bg-[#1a2224] relative group">
           <img
-            src="./home/anant.jpg"
+            src="./home/anant.webp"
             alt="Anant Shivdas Chavan"
             className="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:rotate-2"
           />
@@ -177,7 +177,7 @@ const Intro: React.FC = () => {
                 {/* Resume Preview - Image Based for Consistency */}
                 <div className="flex-grow bg-gray-900 w-full h-full relative overflow-y-auto flex items-start justify-center p-4 md:p-8">
                   <img
-                    src="/documents/anantresume.jpg"
+                    src="/documents/anantresume.webp"
                     alt="Resume Preview"
                     className="w-full max-w-[800px] shadow-2xl h-auto block"
                     onError={(e) => {
@@ -201,7 +201,7 @@ const Intro: React.FC = () => {
                     <p className="max-w-md mb-6 text-gray-400">
                       For the best experience, please add an image version of
                       your resume named{' '}
-                      <code className="text-[#facd8a]">anantresume.jpg</code>{' '}
+                      <code className="text-[#facd8a]">anantresume.webp</code>{' '}
                       to the{' '}
                       <code className="text-gray-300">public/documents</code>{' '}
                       folder.

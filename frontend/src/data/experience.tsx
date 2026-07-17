@@ -8,12 +8,12 @@ const experience: ExperienceEntry[] = [
     detail_description:
       "Being a project based internship as trainees we spent 2 weeks in training period in which we learned how industry grade apps are developed. We learned technologies like .NET, .ASP and make several apps as a part of training. We were then assigned projects to work on. My project being the firm's website. ",
     images: [
-      './experience/Emerging Technologies/website.png',
-      './experience/Emerging Technologies/Courses.png',
-      './experience/Emerging Technologies/LoginPage.png',
-      './experience/Emerging Technologies/Services.png',
-      './experience/Emerging Technologies/Update Info.png',
-      './experience/Emerging Technologies/Admin Panel.png',
+      './experience/Emerging Technologies/website.webp',
+      './experience/Emerging Technologies/Courses.webp',
+      './experience/Emerging Technologies/LoginPage.webp',
+      './experience/Emerging Technologies/Services.webp',
+      './experience/Emerging Technologies/Update Info.webp',
+      './experience/Emerging Technologies/Admin Panel.webp',
     ],
     tasks_description: [
       '- Worked on desktop app development as a trainee on .NET Framework and completed a project',
@@ -52,10 +52,10 @@ const experience: ExperienceEntry[] = [
       {
         title: 'Luminosity Drone',
         images: [
-          './experience/eyantra/Luminosity Drone/drone.png',
-          './experience/eyantra/Luminosity Drone/IMG_20231009_115328.jpg',
-          './experience/eyantra/Luminosity Drone/IMG_20240115_174202.jpg',
-          './experience/eyantra/Luminosity Drone/IMG_20240118_131436.jpg',
+          './experience/eyantra/Luminosity Drone/drone.webp',
+          './experience/eyantra/Luminosity Drone/IMG_20231009_115328.webp',
+          './experience/eyantra/Luminosity Drone/IMG_20240115_174202.webp',
+          './experience/eyantra/Luminosity Drone/IMG_20240118_131436.webp',
         ],
         tasks_description: [
           'developed PID script for autonomous drone flight in Gazebo simulation via ROS Noetic in Python.',
@@ -67,7 +67,7 @@ const experience: ExperienceEntry[] = [
       },
       {
         title: 'Balancing Bot',
-        images: ['./experience/eyantra/Balancing Bot/hardware pic.jpg'],
+        images: ['./experience/eyantra/Balancing Bot/hardware pic.webp'],
         tasks_description: [
           'wrote PID controller script for inverted pendulum on a cart problem',
           'developed state model of balancing bot and wrote a LDR controller',
