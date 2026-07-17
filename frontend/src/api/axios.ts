@@ -2,7 +2,7 @@ import { BackendApiClient } from "@/types/axios";
 import axios from "axios";
 
 const bApi = axios.create({
-  baseURL: import.meta.env.BACKEND_API_URL || 'http://localhost:5000/api/v1',
+  baseURL: import.meta.env.VITE_BACKEND_API_URL || 'http://localhost:5000/api/v1',
   timeout: 15000,
   withCredentials: true,
   headers: {
