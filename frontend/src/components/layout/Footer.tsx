@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
 
         <div className="flex justify-center">
           <p className="text-white text-[clamp(6px,0.9vw,20px)] italic w-[70%] pt-4 text-center border-t-1 border-gray-500">
-            In loving memory of Manjima didi. A beautiful mind. 💫🦋
+            Inspired by SSR Space, a space dedicated to Shri Sushant Singh Rajput 💫💐
           </p>
         </div>
       </div>

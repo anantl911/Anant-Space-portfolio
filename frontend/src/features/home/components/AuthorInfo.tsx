@@ -7,6 +7,7 @@ import ExperienceBox from './ExperienceBox';
 import EducationBox from './EducationBox';
 import ExtraCurricularBox from './ExtraCurricularBox';
 import CertificationsBox from './CertificationsBox';
+import AchievementsBox from './AchievementsBox';
 import MiscInfo from './MiscInfo';
 
 const AuthorInfo: React.FC = () => {
@@ -108,11 +109,19 @@ const AuthorInfo: React.FC = () => {
 
             <div className="flex-1">
               <h3 className="text-[#facd8a] text-xl font-bold mb-6 text-center lg:text-left pl-6 border-l-4 border-gray-700">
-                Extra Curriculars
+                Participation
               </h3>
               <ExtraCurricularBox />
             </div>
           </div>
+          
+          { /* TODO: Decide and make changes to this, it's not used for now. */ }
+          {/* <div className="w-full max-w-7xl mx-auto px-4 mt-8 lg:mt-16">
+            <h3 className="text-[#facd8a] text-xl font-bold mb-6 text-center lg:text-left pl-6 border-l-4 border-transparent">
+              Achievements
+            </h3>
+            <AchievementsBox />
+          </div> */}
 
           <div className="w-full max-w-7xl mx-auto px-4 mt-16">
             <h3 className="text-[#facd8a] text-xl font-bold mb-6 text-center border-t border-gray-800 pt-8">

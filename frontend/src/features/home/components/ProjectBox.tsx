@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Project } from '@/types/models/project';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useProjects } from '@/hooks/queries/useProjects';
 import { flattenTechTags, formatDate } from '@/utils/genericUtils';
@@ -9,13 +9,41 @@ import { ProjectsHeader } from './projects/ProjectHeader';
 import { ProjectCard } from './projects/ProjectCard';
 import { ProjectLinks } from './projects/ProjectLinks';
 import { DesignatedTag } from './projects/PDesignatedTag';
+import { ImageViewer } from './projects/ImageViewer';
 
 const ProjectBox: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('right');
+  const [isImageViewerOpen, setIsImageViewerOpen] = useState(false);
   const { data: projects, isLoading, isError } = useProjects();
 
-  const openProject = (project: Project) => setSelectedProject(project);
+  const openProject = (project: Project) => {
+    setSelectedProject(project);
+    setCurrentImageIndex(0);
+    setIsImageViewerOpen(false);
+  };
+  
   const closeProject = () => setSelectedProject(null);
+
+  const nextImage = () => {
+    if (selectedProject) {
+      setSlideDirection('right');
+      setCurrentImageIndex((prev) => (prev + 1) % selectedProject.screenshots.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedProject) {
+      setSlideDirection('left');
+      setCurrentImageIndex((prev) => (prev - 1 + selectedProject.screenshots.length) % selectedProject.screenshots.length);
+    }
+  };
+  
+  const jumpToImage = (idx: number) => {
+    setSlideDirection(idx > currentImageIndex ? 'right' : 'left');
+    setCurrentImageIndex(idx);
+  };
   
   return (
     <div id="project-gallery" className="w-full mt-10 px-4 relative">
@@ -81,13 +109,65 @@ const ProjectBox: React.FC = () => {
               </button>
 
               {/* Modal Image Section */}
-              <div className="md:w-1/2 h-64 md:h-auto relative bg-black flex-shrink-0">
+              <div className="md:w-1/2 h-64 md:h-auto relative bg-black flex-shrink-0 group overflow-hidden">
                 {selectedProject.screenshots.length > 0 ? (
-                  <img
-                    src={selectedProject.screenshots[0]}
-                    alt={selectedProject.title}
-                    className="w-full h-full object-contain"
-                  />
+                  <>
+                    <AnimatePresence initial={false} custom={slideDirection}>
+                      <motion.img
+                        key={currentImageIndex}
+                        src={selectedProject.screenshots[currentImageIndex]}
+                        alt={selectedProject.title}
+                        custom={slideDirection}
+                        variants={{
+                          enter: (dir: 'left' | 'right') => ({
+                            x: dir === 'right' ? '100%' : '-100%',
+                            opacity: 0
+                          }),
+                          center: {
+                            x: 0,
+                            opacity: 1
+                          },
+                          exit: (dir: 'left' | 'right') => ({
+                            x: dir === 'right' ? '-100%' : '100%',
+                            opacity: 0
+                          })
+                        }}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        transition={{ type: 'tween', duration: 0.3 }}
+                        className="absolute inset-0 w-full h-full object-contain cursor-zoom-in"
+                        onClick={() => setIsImageViewerOpen(true)}
+                      />
+                    </AnimatePresence>
+                    
+                    {selectedProject.screenshots.length > 1 && (
+                      <>
+                        <button
+                          onClick={prevImage}
+                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-8 h-8 flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                        >
+                          <FontAwesomeIcon icon={faChevronLeft} />
+                        </button>
+                        <button
+                          onClick={nextImage}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-8 h-8 flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                        >
+                          <FontAwesomeIcon icon={faChevronRight} />
+                        </button>
+                        
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                          {selectedProject.screenshots.map((_, idx) => (
+                            <button
+                              key={idx}
+                              onClick={() => jumpToImage(idx)}
+                              className={`w-2 h-2 rounded-full transition-colors z-10 ${idx === currentImageIndex ? 'bg-white' : 'bg-white/40 hover:bg-white/80'}`}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </>
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-gray-500">
                     No image available
@@ -137,6 +217,18 @@ const ProjectBox: React.FC = () => {
               </div>
             </motion.div>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isImageViewerOpen && selectedProject && (
+          <ImageViewer
+            images={selectedProject.screenshots}
+            currentIndex={currentImageIndex}
+            onClose={() => setIsImageViewerOpen(false)}
+            onNext={nextImage}
+            onPrev={prevImage}
+          />
         )}
       </AnimatePresence>
     </div>

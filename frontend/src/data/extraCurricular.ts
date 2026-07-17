@@ -2,21 +2,21 @@ import type { ExtracurricularEntry } from '@/types/education';
 
 const extracurriculars: ExtracurricularEntry[] = [
   {
-    title: 'Hackathons',
+    title: 'National Space Hackathon',
     description:
-      'Participated in multiple hackathons including Smart India Hackathon and NASA Space Apps Challenge.',
+      'Implemented a Stowage System for a hypothetical Stowage system on the ISS.',
     icon: 'faLaptopCode',
   },
   {
-    title: 'Robotics Club Lead',
+    title: 'eYantra 23',
     description:
-      'Led the college robotics club, organizing workshops and mentoring juniors in bot fabrication.',
+      'Worked on the Luminosity Drone theme, in an extensive 8 months Robotics Competition in a team of 4.',
     icon: 'faRobot',
   },
   {
-    title: 'Volunteer Work',
+    title: 'IdeaSpark',
     description:
-      'Active volunteer for local NGO, teaching basic computer literacy to underprivileged children.',
+      'pitched an IOT and AI powered Wildlife Detection system in an Idea presentation competition. ',
     icon: 'faHandsHelping',
   },
 ];

@@ -2,40 +2,6 @@ import type { ExperienceEntry } from '@/types/experience';
 
 const experience: ExperienceEntry[] = [
   {
-    title: 'EYantra',
-    description:
-      'EYantra is an annual international robotics competition organized by IIT Bombay during August. The competition involves completion of tasks to develop solutions to assigned problem statements. Teams initially work on software to test their solutions in simulation followed by implementation on hardware. ',
-    theme: [
-      {
-        title: 'Luminosity Drone',
-        images: [
-          './experience/eyantra/Luminosity Drone/drone.png',
-          './experience/eyantra/Luminosity Drone/IMG_20231009_115328.jpg',
-          './experience/eyantra/Luminosity Drone/IMG_20240115_174202.jpg',
-          './experience/eyantra/Luminosity Drone/IMG_20240118_131436.jpg',
-        ],
-        tasks_description: [
-          'developed PID script for autonomous drone flight in Gazebo simulation via ROS Noetic in Python.',
-          "wrote OpenCV based script to detect LED clusters from drone's IR camera by using image segmentation.",
-          'led a team of 4 people to 2nd stage being part of the 50 teams selected from 2400 global theme participants to receive hardware kits.',
-          'implemented ButterWorth filter to cancel WhyCON marker height noise in RPi based drone.',
-        ],
-        time: '01/08/23 - 22/02/24',
-      },
-      {
-        title: 'Balancing Bot',
-        images: ['./experience/eyantra/Balancing Bot/hardware pic.jpg'],
-        tasks_description: [
-          'wrote PID controller script for inverted pendulum on a cart problem',
-          'developed state model of balancing bot and wrote a LDR controller',
-          'tested scripted controllers and ran simulations in CoppeliaSim for a balancing bot',
-        ],
-        time: '01/08/24 - 22/02/25',
-      },
-    ],
-    buttons: [],
-  },
-  {
     title: 'Emerging Technology',
     description:
       'Emerging Technologies is an IT firm based in Nashik. The firm delivers IT services to its clients.',
@@ -78,6 +44,40 @@ const experience: ExperienceEntry[] = [
       </svg>
     ),
   },
+  {
+    title: 'EYantra',
+    description:
+      'EYantra is an annual international robotics competition organized by IIT Bombay during August. The competition involves completion of tasks to develop solutions to assigned problem statements. Teams initially work on software to test their solutions in simulation followed by implementation on hardware. ',
+    theme: [
+      {
+        title: 'Luminosity Drone',
+        images: [
+          './experience/eyantra/Luminosity Drone/drone.png',
+          './experience/eyantra/Luminosity Drone/IMG_20231009_115328.jpg',
+          './experience/eyantra/Luminosity Drone/IMG_20240115_174202.jpg',
+          './experience/eyantra/Luminosity Drone/IMG_20240118_131436.jpg',
+        ],
+        tasks_description: [
+          'developed PID script for autonomous drone flight in Gazebo simulation via ROS Noetic in Python.',
+          "wrote OpenCV based script to detect LED clusters from drone's IR camera by using image segmentation.",
+          'led a team of 4 people to 2nd stage being part of the 50 teams selected from 2400 global theme participants to receive hardware kits.',
+          'implemented ButterWorth filter to cancel WhyCON marker height noise in RPi based drone.',
+        ],
+        time: '01/08/23 - 22/02/24',
+      },
+      {
+        title: 'Balancing Bot',
+        images: ['./experience/eyantra/Balancing Bot/hardware pic.jpg'],
+        tasks_description: [
+          'wrote PID controller script for inverted pendulum on a cart problem',
+          'developed state model of balancing bot and wrote a LDR controller',
+          'tested scripted controllers and ran simulations in CoppeliaSim for a balancing bot',
+        ],
+        time: '01/08/24 - 22/02/25',
+      },
+    ],
+    buttons: [],
+  }
 ];
 
 export default experience;
