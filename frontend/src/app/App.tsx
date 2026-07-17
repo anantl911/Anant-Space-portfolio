@@ -7,6 +7,7 @@ import GamesPage from '@/features/games/pages/GamesPage';
 import BlogPage from '@/features/blogs/pages/BlogPage';
 import BlogPostPage from '@/features/blogs/pages/BlogPostPage';
 import BlogEditorPage from '@/features/blogs/pages/BlogPageEditor';
+import { Navigate } from 'react-router-dom';
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
           <Route path="/Blog" element={<BlogPage />} />
           <Route path="/Blog/:slug" element={<BlogPostPage />} />
           <Route path="/Blog/Create" element={<BlogEditorPage />}/>
+          <Route path="*" element={<Navigate to="/Home" replace />} />
         </Routes>
         <Footer />
       </BrowserRouter>
