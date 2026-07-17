@@ -1,0 +1,8 @@
+{
+  "name": "anant-space-root",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ]
+}
