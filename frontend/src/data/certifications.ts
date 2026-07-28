@@ -5,7 +5,7 @@ const certifications: CertificationEntry[] = [
     title: 'Full Stack Web Development',
     issuer: 'GeeksForGeeks',
     date: '2024',
-    link: 'http://drive.google.com',
+    link: 'https://drive.google.com/file/d/1olVjJokNFQYHvtXkPs1TR5PGEW_jkOLr/view?usp=sharing',
   },
   {
     title: 'Advanced Excel, PowerBI and Tableau',

@@ -11,14 +11,14 @@ const projects: Project[] = [
     ],
     techTags: {
       general: [],
-      frontend: ["reactjs", "tailwindcss", "shadcn", "javascript"],
-      backend: ["expressjs", "nodejs"],
-      database: ["posgressql", "prismaorm"],
+      frontend: ["ReactJS", "TailwindCSS", "ShadCN", "JavaScript"],
+      backend: ["ExpressJS", "NodeJS"],
+      database: ["posgresSQL", "PrismaORM"],
       desktop: [],
       others: []
     },
     designatedTag: {
-      tag: "FY_PROJECT",
+      tag: "FINAL YEAR PROJECT",
       detail: null
     },
     visibleFor: ["everyone"],
@@ -32,7 +32,10 @@ const projects: Project[] = [
     priority: 1,
     createdAt: "2026-06-02T18:37:26.676Z",
     updatedAt: "2026-06-02T18:37:26.676Z",
-    __v: 0
+    __v: 0,
+    links: {
+      github: "https://github.com/HADES-FAS"
+    }
   },
   {
     _id: "6a1fe8aad74324e19a4cb755",
@@ -42,11 +45,11 @@ const projects: Project[] = [
     ],
     techTags: {
       general: [],
-      frontend: ["reactjs", "tailwindcss", "shadcn", "javascript"],
-      backend: ["expressjs", "nodejs"],
-      database: ["mongodb"],
+      frontend: ["ReactJS", "TailwindCSS", "ShadCN", "JavaScript"],
+      backend: ["ExpressJS", "NodeJS"],
+      database: ["MongoDB"],
       desktop: [],
-      others: ["google/genai"]
+      others: ["Google/GenAI"]
     },
     designatedTag: {
       tag: "",
@@ -62,7 +65,10 @@ const projects: Project[] = [
     priority: 2,
     createdAt: "2026-06-03T08:41:14.156Z",
     updatedAt: "2026-06-03T08:41:14.156Z",
-    __v: 0
+    __v: 0,
+    links: {
+      github: "anantl911/AI-Interview-Platform"
+    }
   },
   {
     _id: "6a2005669c35da88327c3ac3",
@@ -71,12 +77,12 @@ const projects: Project[] = [
       "With features like virus scanning, RAG based file search and LLM integration. StoreIt is a secure cloud file storage system made using React, NextJs and TailwindCSS"
     ],
     techTags: {
-      general: ["nextjs"],
-      frontend: ["reactjs", "tailwindcss", "shadcn", "javascript"],
+      general: ["NextJS"],
+      frontend: ["ReactJS", "TailwindCSS", "ShadCN", "JavaScript"],
       backend: [],
-      database: ["appwrite/tabledb"],
+      database: ["Appwrite/TableDB"],
       desktop: [],
-      others: ["appwrite/storagebucket"]
+      others: ["Appwrite/StorageBucket"]
     },
     designatedTag: {
       tag: "",
@@ -94,7 +100,10 @@ const projects: Project[] = [
     priority: 3,
     createdAt: "2026-06-03T10:43:50.276Z",
     updatedAt: "2026-06-03T10:43:50.276Z",
-    __v: 0
+    __v: 0,
+    links: {
+      github: "https://github.com/anantl911/StoreIt"
+    }
   },
   {
     _id: "6a2020a355801d75a7cafbdb",
@@ -105,10 +114,10 @@ const projects: Project[] = [
       "Quality of life features like bookmarking problems, note-making and custom celebration window, as well full-name based searching."
     ],
     techTags: {
-      general: ["typescript"],
-      frontend: ["reactjs", "tailwindcss", "shadcn"],
-      backend: ["nodejs", "expressjs"],
-      database: ["appwrite/tabledb", "redis"],
+      general: ["TypeScript"],
+      frontend: ["ReactJs", "TailwindCSS", "ShadCN"],
+      backend: ["NodeJS", "ExpressJS"],
+      database: ["Appwrite/TableDB", "Redis"],
       desktop: [],
       others: []
     },
@@ -126,7 +135,10 @@ const projects: Project[] = [
     priority: 4,
     createdAt: "2026-06-03T12:40:03.127Z",
     updatedAt: "2026-06-03T12:40:03.127Z",
-    __v: 0
+    __v: 0,
+    links: {
+      github: "https://github.com/SussyGeek"
+    }
   },
   {
     _id: "6a2039e8b82364a6b12876c2",
@@ -137,7 +149,7 @@ const projects: Project[] = [
       "Introduced vertex mode, generation count and graph to visualize cell population growth. All implemented using C++ and SFML."
     ],
     techTags: {
-      general: ["c++", "sfml", "opencv"],
+      general: ["C++", "SFML", "OpenCV"],
       frontend: [],
       backend: [],
       database: [],
@@ -145,7 +157,7 @@ const projects: Project[] = [
       others: []
     },
     designatedTag: {
-      tag: "",
+      tag: "PBL Project",
       detail: null
     },
     visibleFor: ["everyone"],
@@ -159,10 +171,7 @@ const projects: Project[] = [
     updatedAt: "2026-06-03T14:27:52.598Z",
     __v: 0,
     links: {
-      youtube: "youtube.com",
-      as_blog: "test",
-      deployment: "fasfasf",
-      github: "sdadas"
+      github: "github.com"
     }
   }
 ];

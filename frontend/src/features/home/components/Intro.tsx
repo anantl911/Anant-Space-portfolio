@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faGoogleDrive } from '@fortawesome/free-brands-svg-icons';
 import { faFileAlt, faTimes, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import IntroContact from './IntroContact';
 
 interface SocialItem {
   icon: IconDefinition;
@@ -60,22 +61,20 @@ const Intro: React.FC = () => {
           Aside from coding, I like to play video games and I read, I make white board sketches.
           I&apos; plan to use this site to share my experience regarding life, my journey as a SE and some creative works, which I'll outline in future.
         </p>
-        {/* <p>
-          If you&apos;d like to contribute creative works and/or your thoughts
-          feel free to share them. You will be credited. I&apos;d be glad to
-          feature your works here, as progress is made on Anant Space{' '}
-        </p> */}
+
+        {/* Contact Info */}
+        <IntroContact />
 
         {/* Socials */}
-        <div className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start">
+        <div className="flex flex-wrap gap-4 mt-4 justify-center lg:justify-start">
           {socialItems.map((item, idx) => {
             const Wrapper = item.href ? 'a' : 'button';
             const wrapperProps = item.href
               ? {
-                  href: item.href,
-                  target: '_blank' as const,
-                  rel: 'noopener noreferrer',
-                }
+                href: item.href,
+                target: '_blank' as const,
+                rel: 'noopener noreferrer',
+              }
               : { onClick: item.action };
 
             return (
@@ -154,7 +153,7 @@ const Intro: React.FC = () => {
                 {/* Header */}
                 <div className="bg-[#1a2224] text-white p-4 flex justify-between items-center border-b border-[#facd8a] flex-shrink-0">
                   <h2 className="text-xl font-bold text-[#facd8a]">
-                    Resume - Anant Shivdas Chavan
+                    Resume
                   </h2>
                   <div className="flex gap-4">
                     <a
@@ -164,6 +163,14 @@ const Intro: React.FC = () => {
                       title="Download PDF"
                     >
                       <FontAwesomeIcon icon={faDownload} size="lg" />
+                    </a>
+                    <a
+                      href="https://drive.google.com/file/d/1ZxlufHlRRxDbkmQEwiwZWDDD1wKFWvYS/view?usp=sharing"
+                      target="_blank"
+                      className="text-white hover:text-[#facd8a] transition-colors"
+                      title="View PDF"
+                    >
+                      <FontAwesomeIcon icon={faGoogleDrive} size="lg" />
                     </a>
                     <button
                       onClick={() => setShowResume(false)}
@@ -177,7 +184,7 @@ const Intro: React.FC = () => {
                 {/* Resume Preview - Image Based for Consistency */}
                 <div className="flex-grow bg-gray-900 w-full h-full relative overflow-y-auto flex items-start justify-center p-4 md:p-8">
                   <img
-                    src="/documents/anantresume.webp"
+                    src="/documents/anantresume.avif"
                     alt="Resume Preview"
                     className="w-full max-w-[800px] shadow-2xl h-auto block"
                     onError={(e) => {
@@ -201,7 +208,7 @@ const Intro: React.FC = () => {
                     <p className="max-w-md mb-6 text-gray-400">
                       For the best experience, please add an image version of
                       your resume named{' '}
-                      <code className="text-[#facd8a]">anantresume.webp</code>{' '}
+                      <code className="text-[#facd8a]">anantresume.avif</code>{' '}
                       to the{' '}
                       <code className="text-gray-300">public/documents</code>{' '}
                       folder.
