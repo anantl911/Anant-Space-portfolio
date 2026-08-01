@@ -32,9 +32,9 @@ const BlogPage = () => {
                     )}
                 </div>
 
-                <div id="new-blogs">
+                {/* <div id="new-blogs">
                     <NewBlog />
-                </div>
+                </div> */}
             </div>
         </div>
     )
