@@ -3,7 +3,7 @@ import AboutSection from '../components/AboutSection';
 
 const HomePage: React.FC = () => {
   return (
-    <article id="home">
+    <article>
       <WelcomeSection />
       <AboutSection />
     </article>

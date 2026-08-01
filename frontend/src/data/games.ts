@@ -11,7 +11,7 @@ const featuredGames: FeaturedGame[] = [
     title: "Langton's Ant",
     description:
       "Try Langton's Ant while I work on ant simulation. How big of a colony can your ant form?",
-    pictures: ["games/featured_images/langton'sant/lant.gif"],
+    pictures: ["games/featured_images/langton'sant/lant.webp"],
   },
   {
     title: 'Predator vs Prey',

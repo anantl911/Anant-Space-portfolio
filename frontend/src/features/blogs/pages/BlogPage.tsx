@@ -9,7 +9,7 @@ const BlogPage = () => {
     const { data, isLoading } = useBlogs();
 
     // Use data from API if it exists and has items, otherwise use mockBlogs
-    const { blogs } = (data && data.blogs.length > 0) ? data : { blogs: mockBlogs } ;
+    const { blogs } = (data && data.blogs.length > 0) ? data : { blogs: mockBlogs };
 
     return (
         <div className="bg-neutral-950">

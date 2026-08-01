@@ -21,12 +21,14 @@ const App: React.FC = () => {
           </div>
           <Routes>
             <Route path="/Home" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/Art" element={<ArtPage />} />
             <Route path="/Games" element={<GamesPage />} />
             <Route path="/Blog" element={<BlogPage />} />
             <Route path="/Blog/:slug" element={<BlogPostPage />} />
             <Route path="/Blog/Create" element={<BlogEditorPage />} />
             <Route path="*" element={<Navigate to="/Home" replace />} />
+            <Route path="/About" element={<Navigate to="/Blog/about-me-ms9ms9nz" replace />} />
           </Routes>
           <Footer />
         </BrowserRouter>

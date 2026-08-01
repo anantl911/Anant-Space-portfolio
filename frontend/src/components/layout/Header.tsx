@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import navLinks from '@/data/navLinks';
 import type { HeaderProps } from '@/types/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 const Header: React.FC<HeaderProps> = ({ anantSpaceLogo }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation().pathname.split("/")[1];
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,17 +29,22 @@ const Header: React.FC<HeaderProps> = ({ anantSpaceLogo }) => {
           className={
             isMobile
               ? 'w-full text-center border-b border-gray-800/50 py-4 hover:bg-white/5 transition-colors'
-              : 'hover:border-b-2 hover:border-[#facd8a] pb-6'
+              : 'relative group pb-6'
           }
           key={link.toLowerCase()}
         >
-          <Link 
-            to={linkName ? linkName : link} 
+          <Link
+            to={linkName ? linkName : link}
             className={isMobile ? 'block w-full' : 'px-6'}
             onClick={() => isMobile && setIsMobileMenuOpen(false)}
           >
             {link.toUpperCase()}
           </Link>
+          {!isMobile && (
+            location === link ?
+              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#facd8a] " /> :
+              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#facd8a] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-center pointer-events-none" />
+          )}
         </li>
       );
     });
@@ -58,7 +65,7 @@ const Header: React.FC<HeaderProps> = ({ anantSpaceLogo }) => {
               alt="Anant's Space Logo"
             />
           </div>
-          
+
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-[#facd8a] p-2 transition-colors"

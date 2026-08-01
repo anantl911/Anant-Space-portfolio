@@ -79,20 +79,54 @@ const renderTiptapNode = (node: any, index: number | string): React.ReactNode =>
         </pre>
       );
       
-    case 'image':
+    case 'image': {
+      const { 
+        src, 
+        alt, 
+        caption, 
+        title, 
+        width = '100%', 
+        height = 'auto', 
+        objectFit = 'cover', 
+        alignment = 'center' 
+      } = node.attrs || {};
+
+      const displayCaption = caption || title;
+
+      let alignClass = 'mx-auto';
+      if (alignment === 'left') {
+        alignClass = 'mr-auto ml-0 text-left';
+      } else if (alignment === 'right') {
+        alignClass = 'ml-auto mr-0 text-right';
+      } else {
+        alignClass = 'mx-auto text-center';
+      }
+
+      const figureStyle: React.CSSProperties = {
+        width: width,
+        maxWidth: '100%',
+      };
+
+      const imgStyle: React.CSSProperties = {
+        width: '100%',
+        height: height === 'auto' ? 'auto' : height,
+        objectFit: objectFit as React.CSSProperties['objectFit'],
+      };
+
       return (
-        <figure key={`img-${index}`} className={`my-8 ${blockClass}`}>
+        <figure key={`img-${index}`} className={`my-8 flex flex-col ${alignClass}`} style={figureStyle}>
           <img 
-            src={node.attrs?.src} 
-            alt={node.attrs?.alt || 'Blog image'} 
-            title={node.attrs?.title}
-            className="rounded-xl w-full h-auto object-cover max-h-[600px]"
+            src={src} 
+            alt={alt || 'Blog image'} 
+            style={imgStyle}
+            className="rounded-xl border border-white/5"
           />
-          {node.attrs?.title && (
-             <figcaption className="text-center text-sm text-neutral-500 mt-2">{node.attrs.title}</figcaption>
+          {displayCaption && (
+             <figcaption className="text-center text-sm text-neutral-400 mt-2 italic">{displayCaption}</figcaption>
           )}
         </figure>
       );
+    }
       
     case 'horizontalRule':
       return <hr key={`hr-${index}`} className="border-neutral-800 my-10 border-t-2" />;

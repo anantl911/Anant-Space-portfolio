@@ -3,7 +3,7 @@ import ContactForm from '@/features/RelayCRT/components/ContactForm';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="z-50">
+    <footer className="z-50" id="section-contact">
       <div
         id="footer-container"
         className="md:min-h-[80px] bg-black w-full md:pt-14 pb-4 select-none"

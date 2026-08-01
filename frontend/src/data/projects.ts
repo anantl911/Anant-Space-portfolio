@@ -171,7 +171,7 @@ const projects: Project[] = [
     updatedAt: "2026-06-03T14:27:52.598Z",
     __v: 0,
     links: {
-      github: "github.com"
+      github: "https://github.com/anantl911/CAMCPP"
     }
   }
 ];

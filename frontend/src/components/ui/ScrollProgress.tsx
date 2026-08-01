@@ -6,14 +6,17 @@ interface Section {
 }
 
 const sections: Section[] = [
-  { id: 'subsection-author-info', label: 'Home' },
-  { id: 'author-projects', label: 'Projects' },
+  { id: 'home', label: 'Home' },
+  { id: 'subsection-author-info', label: 'Intro' },
+  { id: 'project-gallery', label: 'Projects' },
   { id: 'author-experience', label: 'Experience' },
-  { id: 'section-education', label: 'Education' },
+  { id: 'section-education', label: 'Academics' },
+  { id: 'subsection-certifications', label: 'Certificates' },
+  { id: 'section-contact', label: 'Contact' },
 ];
 
 const ScrollProgress: React.FC = () => {
-  const [activeSection, setActiveSection] = useState('subsection-author-info');
+  const [activeSection, setActiveSection] = useState('home');
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
@@ -53,7 +56,21 @@ const ScrollProgress: React.FC = () => {
 
   const scrollTo = useCallback((id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      if (id === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.getBoundingClientRect().height : 80;
+      const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = Math.max(0, elementPosition - headerHeight - 16);
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
   }, []);
 
   return (
@@ -66,20 +83,18 @@ const ScrollProgress: React.FC = () => {
           onClick={() => scrollTo(sec.id)}
         >
           <span
-            className={`text-xs font-mono uppercase tracking-widest text-[#facd8a] absolute right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 ${
-              activeSection === sec.id
-                ? 'opacity-100 translate-x-0'
-                : 'translate-x-2'
-            }`}
+            className={`text-xs font-mono uppercase tracking-widest text-[#facd8a] absolute right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 ${activeSection === sec.id
+              ? 'opacity-100 translate-x-0'
+              : 'translate-x-2'
+              }`}
           >
             {sec.label}
           </span>
           <div
-            className={`w-3 h-3 rounded-full border-2 transition-all duration-300 z-10 ${
-              activeSection === sec.id
-                ? 'bg-[#facd8a] border-[#facd8a] scale-125 shadow-[0_0_10px_#facd8a]'
-                : 'bg-[#1a2224] border-gray-500 group-hover:border-[#facd8a]'
-            }`}
+            className={`w-3 h-3 rounded-full border-2 transition-all duration-300 z-10 ${activeSection === sec.id
+              ? 'bg-[#facd8a] border-[#facd8a] scale-125 shadow-[0_0_10px_#facd8a]'
+              : 'bg-[#1a2224] border-gray-500 group-hover:border-[#facd8a]'
+              }`}
           />
         </div>
       ))}

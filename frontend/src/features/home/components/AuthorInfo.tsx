@@ -121,8 +121,10 @@ const AuthorInfo: React.FC = () => {
             </h3>
             <AchievementsBox />
           </div> */}
+        </div>
 
-          <div className="w-full max-w-7xl mx-auto px-4 mt-16">
+        <div>
+          <div className="w-full max-w-7xl mx-auto px-4 mt-16 pb-18" id="subsection-certifications">
             <h3 className="text-[#facd8a] text-xl font-bold mb-6 text-center border-t border-gray-800 pt-8">
               Certifications
             </h3>

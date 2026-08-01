@@ -31,9 +31,11 @@ const GameBox: React.FC<GameBoxProps> = ({ gameName, gameDescription, imageSourc
           </div>
 
           <div id="buttons" className="md:relative md:bottom-3 flex items-end">
-            <button className="bg-[rgb(250,205,138)] text-black h-full md:h-fit relative w-5 sm:w-6 left-4 md:left-0 md:px-6 flex items-center justify-center hover:bg-white transition duration-500 hover:cursor-pointer">
+            <a href="#playground"
+              className="bg-[rgb(250,205,138)] text-black h-full md:h-fit relative w-5 sm:w-6 left-4 md:left-0 md:px-6 flex items-center justify-center hover:bg-white transition duration-500 hover:cursor-pointer"
+            >
               ▷
-            </button>
+            </a>
           </div>
         </div>
       </div>
